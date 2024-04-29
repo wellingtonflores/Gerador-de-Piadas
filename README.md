@@ -10,7 +10,7 @@ Antes de começar, certifique-se de ter o Node.js instalado em sua máquina. Voc
 
 1. Clone este repositório em sua máquina local:
 
-git clone [https://github.com/wellingtonflores/Gerador-de-Piadas](https://github.com/wellingtonflores/Gerador-de-Piadas)
+git clone [[https://github.com/wellingtonflores/Gerador-de-Piadas](https://github.com/wellingtonflores/Gerador-de-Piadas)](https://github.com/wellingtonflores/Joke-Generator)
 
 2. Navegue até o diretório do projeto:
 

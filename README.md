@@ -19,7 +19,7 @@ cd seu-projeto
 3. Instale as dependências utilizando npm ou yarn:
 
 npm install
-# ou
+ ou
 yarn install
 
 Uso

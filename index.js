@@ -32,7 +32,6 @@ app.post("/request", async (req, res) => {
 
         // Renderiza o resultado na página
         res.render("index.ejs", { setup: result.data.setup, delivery: result.data.delivery, type: result.data.type, joke: result.data.joke, error: result.data.error, message: result.data.message, causedBy: result.data.causedBy });
-        console.log(result.data);
     } catch (error) {
         // Se ocorrer um erro, registra o erro no console e envia uma resposta de erro ao cliente
         console.error("Error processing request:", error);

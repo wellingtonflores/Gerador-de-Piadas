@@ -22,13 +22,13 @@ npm install
  ou
 yarn install
 
-Uso
+## Uso
 Para executar o servidor, basta usar o comando:
 
 nodemon index.js
 
-Contribuição
+## Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para abrir um problema ou enviar um pull request.
 
-Licença
+## Licença
 Este projeto está licenciado sob a MIT License.

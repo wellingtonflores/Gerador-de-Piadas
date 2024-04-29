@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Piada</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="border">
+        <div class="display">
+            <h1>Gerador de Piada</h1>
+        </div>
+        
+        <form action="/request" method="post" onsubmit="return validateForm()">
+        
+            <div class="display">
+                <label for="categories">Select category / categories:</label>
+                <div class="border-background">
+                    <label for="category"></label>
+                    <div class="margin">
+                        <div>
+                            <input type="radio" name="category" id="any" value="Any">Any
+                        </div>
+                        <div>
+                            <input type="radio" name="category" id="custom" value="Custom">Custom:
+                            <input type="checkbox" name="categories" id="programming" value="Programming"> Programming
+                            <input type="checkbox" name="categories" id="miscellaneous" value="Miscellaneous"> Misc
+                            <input type="checkbox" name="categories" id="dark" value="Dark"> Dark
+                            <input type="checkbox" name="categories" id="pun" value="Pun"> Pun
+                            <input type="checkbox" name="categories" id="spooky" value="Spooky"> Spooky
+                            <input type="checkbox" name="categories" id="christmas" value="Christmas"> Christmas
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="display">
+                <label for="language">Select language:</label>
+                <div class="language">
+                    <select name="language" id="language">
+                        <option value="cs">cs - Czech</option>
+                        <option value="de">de - German</option>
+                        <option value="en">en - English</option>
+                        <option value="es">es - Spanish</option>
+                        <option value="fr">fr - French</option>
+                        <option value="pt">pt - Portuguese</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="display">
+                <label for="flags">Select flags to blacklist:</label>
+                <div class="flags">
+                    (optional)
+                    <input type="checkbox" name="flags" id="nsfw" value="nsfw"> nsfw
+                    <input type="checkbox" name="flags" id="religious" value="religious"> religious
+                    <input type="checkbox" name="flags" id="political" value="political"> political
+                    <input type="checkbox" name="flags" id="racist" value="racist"> racist
+                    <input type="checkbox" name="flags" id="sexist" value="sexist"> sexist
+                    <input type="checkbox" name="flags" id="explicit" value="explicit"> explicit
+                </div>
+            </div>
+
+            <div class="display">
+                <input type="submit" value="Send Request">
+            </div>
+        
+        </form>
+
+        <div class="display">
+            <% if (locals.error) { %>
+                <div>
+                    <h2><%= message %></h2>
+                    <p><%= causedBy %></p>
+                </div>
+                
+            <% } else { %>
+                <% if (locals.type === "single"){ %>
+                    <h2><%= joke %></h2>
+                <% } else { %>
+                    <% if (locals.setup && locals.delivery){ %>
+                        <div>
+                            <h2><%= setup %></h2>
+                            <p><%= delivery %></p>
+                        </div>
+                    <% } %>
+                <% } %> 
+            <% } %>
+        </div>
+    </div>
+    
+    <script>
+        function validateForm() {
+            let anyChecked = document.getElementById("any").checked;
+            let customChecked = document.getElementById("custom").checked;
+
+            if (!anyChecked && !customChecked) {
+                alert("Please select either 'Any' or 'Custom' category.");
+                return false;
+            }
+
+            if (customChecked) {
+                let categories = document.getElementsByName("categories");
+                let selected = false;
+                for (let i = 0; i < categories.length; i++) {
+                    if (categories[i].checked) {
+                        selected = true;
+                        break;
+                    }
+                }
+                if (!selected) {
+                    alert("Please select at least one category.");
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

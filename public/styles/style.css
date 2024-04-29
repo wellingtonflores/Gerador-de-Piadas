@@ -1,0 +1,43 @@
+body {
+    color: white;
+}
+
+.margin {
+    margin-left: 25px;
+    background-color: rgb(48, 48, 48);
+    border: 1px solid white;
+    border-radius: 2%;
+    width: 550px;
+    padding: 10px;
+}
+
+.display {
+    display: flex;
+    margin-bottom: 25px;
+    margin-left: 25px;
+}
+
+.border {
+    background-color: rgb(14, 14, 48);
+    border: 1px solid white;
+    border-radius: 2%;
+    width: 100vh;
+}
+
+.language {
+    background-color: rgb(48, 48, 48);
+    border: 1px solid white;
+    border-radius: 2%;
+    width: 550px;
+    margin-left: 98px;
+    padding: 10px;
+}
+
+.flags {
+    background-color: rgb(48, 48, 48);
+    border: 1px solid white;
+    border-radius: 2%;
+    width: 550px;
+    margin-left: 55px;
+    padding: 10px;
+}
